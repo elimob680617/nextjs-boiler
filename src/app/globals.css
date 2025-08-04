@@ -58,3 +58,11 @@
   --color-gradient-first: var(--clb-c-gradient-first);
   --color-gradient-second: var(--clb-c-gradient-second);
 }
+
+html{
+  font-family: var(--font-yekan);
+}
+
+:lang(en){
+  font-family: var(--font-figtree);
+}

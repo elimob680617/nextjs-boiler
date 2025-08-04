@@ -1,5 +1,55 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { Figtree } from "next/font/google";
+import localFont from "next/font/local";
+
+const figtree = Figtree({
+  display: "swap",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-figtree",
+});
+
+const yekan = localFont({
+  src: [
+    {
+      path: "../../public/fonts/yekan/IRANYekanWebThin.woff2",
+      weight: "100",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/yekan/IRANYekanWebLight.woff2",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/yekan/IRANYekanWebRegular.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/yekan/IRANYekanWebMedium.woff2",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/yekan/IRANYekanWebBold.woff2",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/yekan/IRANYekanWebExtraBold.woff2",
+      weight: "800",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/yekan/IRANYekanWebExtraBlack.woff2",
+      weight: "900",
+      style: "normal",
+    },
+  ],
+  variable: "--font-yekan",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -12,8 +62,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html dir="rtl" className={`${figtree.variable} ${yekan.variable}`}>
+      <body>
+        <header className="bg-white flex items-center justify-center text-3xl font-bold uppercase h-20">
+          دوره معماری بویلر
+        </header>
+        <div className="flex-1 flex justify-center items-center">
+          {children}
+        </div>
+      </body>
     </html>
   );
 }
