@@ -1,4 +1,15 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+This is a [Next.js 15](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+
+## Features
+
+- ⚡ **Next.js 15 App Router**: Modern file-based routing and layouts
+- 🎨 **Tailwind CSS**: Utility-first CSS framework for rapid UI development
+- 🖋️ **Custom Font Support**: Pre-configured with Yekan font family for Farsi/Persian typography
+- 🗂️ **Organized Project Structure**: Clear separation of concerns for pages, components, hooks, and utilities
+- 🛠️ **TypeScript**: Type-safe development for fewer runtime errors
+- 🧩 **Ready for Authentication**: Includes basic auth routes (sign-in, verify) for quick start
+- 🚀 **Optimized for Vercel**: Out-of-the-box configuration for seamless deployment
+- 📝 **Extensible**: Easily add new features, pages, and API routes
 
 ## Getting Started
 
