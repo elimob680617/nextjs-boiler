@@ -7,8 +7,9 @@ export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> &
   Loading & {
     isOutline?: boolean;
     isLink?: boolean;
-    animatedIcon: boolean;
-    shape: ButtonShape;
+    animatedIcon?: boolean;
+    shape?: ButtonShape;
   };
 
 export type ButtonShape = "default" | "wide" | "full" | "square";
+export type RefinedMerge<T, U> = Omit<T, keyof U> & U;

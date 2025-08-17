@@ -1,10 +1,1 @@
-export type Variant =
-  | "neutral"
-  | "primary"
-  | "secondary"
-  | "accent"
-  | "ghost"
-  | "info"
-  | "success"
-  | "warning"
-  | "error";
+export type Variant = "filled" | "outlined" | "text";
