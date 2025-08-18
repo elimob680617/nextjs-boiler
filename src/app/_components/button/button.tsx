@@ -1,14 +1,10 @@
-import { tv, type VariantProps } from "tailwind-variants";
-import { ButtonHTMLAttributes, ReactNode } from "react";
+import { tv } from "tailwind-variants";
 import React from "react";
 import Link from "next/link";
-import { ComponentBase } from "@/app/_components/types/component-base.type";
 import { Size } from "@/app/_components/types/size.type";
 import { Color } from "@/app/_components/types/color.type";
-import { RefinedMerge } from "@/app/_components/button/button.types";
+import { ButtonProps } from "@/app/_components/button/button.types";
 import { Variant } from "@/app/_components/types/variant.type";
-
-// import { Loading } from "./loading";
 
 export const styles = tv({
   slots: {
@@ -83,18 +79,6 @@ export const styles = tv({
     variant: "filled",
   },
 });
-
-type ButtonVariants = VariantProps<typeof styles>;
-type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> &
-  RefinedMerge<ButtonVariants, ComponentBase> & {
-    icon?: ReactNode;
-    iconDir?: "start" | "end";
-    loading?: boolean;
-    href?: string;
-    iconSize?: number;
-    isDownload?: boolean;
-    linkClassName?: string;
-  };
 
 export const Button: React.FC<ButtonProps> = ({
   color,

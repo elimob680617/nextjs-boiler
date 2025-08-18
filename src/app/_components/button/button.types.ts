@@ -1,15 +1,21 @@
-import { ButtonHTMLAttributes } from "react";
-import { ComponentBase } from "@/app/_components/types/component-base.type";
-import { Loading } from "@/app/_components/types/loading.type";
+import { ButtonHTMLAttributes, ReactNode } from "react";
+import {
+  ComponentBase,
+  RefinedMerge,
+} from "@/app/_components/types/component-base.type";
+
+import type { VariantProps } from "tailwind-variants";
+import { styles } from "@/app/_components/button/button";
+
+type ButtonVariants = VariantProps<typeof styles>;
 
 export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> &
-  ComponentBase &
-  Loading & {
-    isOutline?: boolean;
-    isLink?: boolean;
-    animatedIcon?: boolean;
-    shape?: ButtonShape;
+  RefinedMerge<ButtonVariants, ComponentBase> & {
+    icon?: ReactNode;
+    iconDir?: "start" | "end";
+    loading?: boolean;
+    href?: string;
+    iconSize?: number;
+    isDownload?: boolean;
+    linkClassName?: string;
   };
-
-export type ButtonShape = "default" | "wide" | "full" | "square";
-export type RefinedMerge<T, U> = Omit<T, keyof U> & U;

@@ -65,10 +65,11 @@ export default function RootLayout({
 }>) {
   return (
     <html dir="rtl" className={`dark ${figtree.variable} ${yekan.variable}`}>
-      <body className="flex flex-col min-h-dvh dark:bg-base-100 dark:text-base-content">
-        <Header />
-        <main className="flex-1 container">{children}</main>
-        <Footer />
+      <body className="flex flex-col min-h-dvh dark:bg-base-300 dark:text-base-content">
+        {children}
+        {/*<Header />*/}
+        {/*<main className="flex-1 container">{children}</main>*/}
+        {/*<Footer />*/}
       </body>
     </html>
   );
