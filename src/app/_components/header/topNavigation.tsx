@@ -3,7 +3,6 @@ import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { NavigationMenuItem } from "@/app/_components/types/navigation-menu-items.type";
-import TopNavigationAccount from "@/app/_components/header/topNavigationAccount";
 
 const menuItems: NavigationMenuItem[] = [
   {
