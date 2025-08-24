@@ -1,3 +1,4 @@
+"use client";
 import { LoadingProps } from "@/app/_components/loading/loading.type";
 import React from "react";
 import { tv } from "tailwind-variants";

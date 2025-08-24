@@ -1,84 +1,9 @@
-import { tv } from "tailwind-variants";
+"use client";
+
 import React from "react";
 import Link from "next/link";
-import { Size } from "@/app/_components/types/size.type";
-import { Color } from "@/app/_components/types/color.type";
-import { ButtonProps } from "@/app/_components/button/button.types";
-import { Variant } from "@/app/_components/types/variant.type";
-
-export const styles = tv({
-  slots: {
-    base: "font-semibold cursor-pointer py-2 border-2 bg-transparent px-4 rounded-lg transition-all hover:opacity-80 flex items-center justify-center gap-2",
-  },
-  variants: {
-    color: {
-      default: "",
-      primary: "",
-    } as Record<Color, string>,
-    variant: {
-      filled: "",
-      outlined: "",
-      text: "",
-    } as Record<Variant, string>,
-    size: {
-      xs: "text-sm py-0.5 px-3 *:w-4 *:h-4 rounded-sm",
-      sm: "text-sm py-1.5 px-3 *:w-4 *:h-4 xl:py-2 xl:px-4 xl:text-base",
-    } as Record<Size, string>,
-    loading: {
-      true: "pointer-events-none ",
-    },
-    disabled: {
-      true: "pointer-events-none",
-    },
-  },
-  compoundVariants: [
-    {
-      variant: "outlined",
-      color: "default",
-      className: "border-secondary-400 text-secondary-300",
-    },
-    {
-      variant: "filled",
-      color: "primary",
-      className: "opacity-90 border-primary bg-primary text-white",
-    },
-    {
-      variant: "filled",
-      color: "secondary",
-      className: "opacity-90 border-secondary-700 bg-secondary-700 text-white",
-    },
-    {
-      variant: "filled",
-      color: "error",
-      className: "opacity-90 border-error bg-error text-white",
-    },
-    {
-      variant: "filled",
-      color: "default",
-      className: "bg-secondary-850 border-secondary-850 text-secondary-300",
-    },
-    {
-      variant: "outlined",
-      color: "primary",
-      className: "border-primary text-primary",
-    },
-    {
-      variant: "outlined",
-      color: "error",
-      className: "border-error text-error hover:bg-error hover:text-white",
-    },
-    {
-      variant: "outlined",
-      color: "primary",
-      disabled: true,
-      className: "border-secondary-850 text-secondary-600",
-    },
-  ],
-  defaultVariants: {
-    color: "primary",
-    variant: "filled",
-  },
-});
+import { Loading } from "@/app/_components/loading";
+import { ButtonProps, styles } from "@/app/_components/button/button.types";
 
 export const Button: React.FC<ButtonProps> = ({
   color,
@@ -97,10 +22,10 @@ export const Button: React.FC<ButtonProps> = ({
   ...rest
 }) => {
   const { base } = styles({
+    color,
     variant,
     loading,
     size,
-    color,
     disabled,
   });
 
@@ -114,7 +39,7 @@ export const Button: React.FC<ButtonProps> = ({
           height: iconSize,
           style: { marginTop: "-4px" },
         })}
-      {/*{loading && <Loading size="xs" color="default" text="" />}*/}
+      {loading && <Loading size="xs" color="default" />}
       {loading ? "در حال ارسال درخواست ..." : children}
       {icon &&
         iconDir === "end" &&
