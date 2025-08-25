@@ -62,7 +62,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html dir="rtl" className={`dark ${figtree.variable} ${yekan.variable}`}>
+    <html dir="rtl" className={`${figtree.variable} ${yekan.variable}`}>
       <body className="flex flex-col min-h-dvh dark:bg-base-300 dark:text-base-content">
         {children}
       </body>

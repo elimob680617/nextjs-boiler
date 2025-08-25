@@ -12,8 +12,9 @@ export type TextboxType = "text" | "number" | "email" | "password";
 
 export const styles = tv({
   slots: {
-    base: "h-12 px-4 text-sm leading-loose flex-shrink dark:placeholder-base-content placeholder-opacity-50 border bg-transparent rounded-lg text-base",
-    input: "flex-1 text-sm xl:text-base outline-none leading-[0px] h-full",
+    base: "self-stretch h-12 px-4 text-sm leading-loose flex-shrink placeholder-base-content placeholder-opacity-50 border bg-transparent rounded-lg text-base",
+    input:
+      "flex-1 text-sm xl:text-base outline-none leading-[0px] h-full w-full",
   },
   variants: {
     color: {
@@ -29,7 +30,7 @@ export const styles = tv({
     variant: {
       outlined: "",
       filled:
-        "border-transparent dark:bg-base-100 focus:outline focus:outline-2 focus:outline-blue-400 focus:outline-offset-2",
+        "border-transparent bg-base-content focus:outline focus:outline-2 focus:outline-blue-400 focus:outline-offset-2",
     } as Record<Variant, string>,
     type: {
       text: "text",
@@ -39,13 +40,13 @@ export const styles = tv({
     } as Record<TextboxType, string>,
     hasError: {
       true: {
-        base: "outline-error bg-error/10",
+        base: "outline-error dark:bg-error/10 border-error",
         labelStyle: "text-error",
       },
     },
     disabled: {
       true: {
-        base: "bg-secondary-100 cursor-not-allowed text-opacity-20 dark:placeholder-base-content placeholder-opacity-20",
+        base: "dark:bg-base-100 cursor-not-allowed text-opacity-20 dark:placeholder-base-content placeholder-opacity-20",
         labelStyle: "opacity-40",
         input: "pointer-events-none tab",
       },
@@ -61,9 +62,6 @@ export const styles = tv({
     {
       variant: "outlined",
       color: "primary",
-      className: {
-        base: "!bg-transparent border-secondary-700",
-      },
     },
   ],
   defaultVariants: {

@@ -10,7 +10,7 @@ import { Size } from "@/app/_components/types/size.type";
 
 export const styles = tv({
   slots: {
-    base: "font-semibold cursor-pointer py-2 border-2 bg-transparent px-4 rounded-lg transition-all hover:opacity-80 flex items-center justify-center gap-2",
+    base: "font-semibold cursor-pointer py-2.5 border-2 bg-transparent px-6 rounded-lg transition-all hover:opacity-80 flex items-center justify-center gap-2",
   },
   variants: {
     color: {

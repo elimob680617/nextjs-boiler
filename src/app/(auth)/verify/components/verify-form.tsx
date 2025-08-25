@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { FC } from "react";
 import { Button } from "@/app/_components/button";
 
 const VerifyForm: FC = () => {
