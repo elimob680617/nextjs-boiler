@@ -12,14 +12,21 @@ export type TextboxType = "text" | "number" | "email" | "password";
 
 export const styles = tv({
   slots: {
-    base: "self-stretch h-12 px-4 text-sm leading-loose flex-shrink placeholder-base-content placeholder-opacity-50 border bg-transparent rounded-lg text-base",
+    base: "px-3 h-12 xl:h-14 rounded-lg flex items-center justify-between gap-2 focus-within:outline focus-within:outline-2 focus-within:outline-offset-2 bg-secondary-850 text-secondary-300 focus-within:border-primary outline-primary",
     input:
-      "flex-1 text-sm xl:text-base outline-none leading-[0px] h-full w-full",
+      "flex-1 text-sm xl:text-base outline-none leading-[0px] h-full placeholder:text-secondary-300",
+    descriptionStyle: "text-sm",
+    wrapper: "flex flex-col gap-2",
+    labelStyle: "text-white text-sm xl:text-base",
   },
   variants: {
     color: {
-      primary:
-        "bg-secondary-850 text-secondary-300 focus-within:border-primary outline-primary",
+      primary: "dark:border-primary focus:dark:outline-primary",
+      secondary: "dark:border-secondary; focus:dark:outline-secondary",
+      info: "dark:border-info focus:dark:outline-info",
+      success: "dark:border-success focus:dark:outline-success",
+      warning: "dark:border-warning focus:dark:outline-warning",
+      error: "dark:border-error focus:dark:outline-error",
     } as Record<Color, string>,
     size: {
       xs: "h-6 px-2 text-xs loading-relax",
@@ -28,9 +35,9 @@ export const styles = tv({
       lg: "h-16 px-6 text-lg loading-loose",
     } as Record<Size, string>,
     variant: {
-      outlined: "",
+      outlined: "border-1 bg-transparent",
       filled:
-        "border-transparent bg-base-content focus:outline focus:outline-2 focus:outline-blue-400 focus:outline-offset-2",
+        "border-transparent bg-base-100 focus:outline focus:outline-2 focus:outline-blue-400 focus:outline-offset-2",
     } as Record<Variant, string>,
     type: {
       text: "text",
@@ -40,13 +47,13 @@ export const styles = tv({
     } as Record<TextboxType, string>,
     hasError: {
       true: {
-        base: "outline-error dark:bg-error/10 border-error",
+        base: "outline-error dark:bg-error/10 border-error ",
         labelStyle: "text-error",
       },
     },
     disabled: {
       true: {
-        base: "dark:bg-base-100 cursor-not-allowed text-opacity-20 dark:placeholder-base-content placeholder-opacity-20",
+        base: "cursor-not-allowed dark:border-base-200 dark:bg-base-200 text-opacity-20 dark:placeholder-base-content placeholder-opacity-20",
         labelStyle: "opacity-40",
         input: "pointer-events-none tab",
       },
@@ -62,10 +69,13 @@ export const styles = tv({
     {
       variant: "outlined",
       color: "primary",
+      className: {
+        base: "!bg-transparent border-secondary-700",
+      },
     },
   ],
   defaultVariants: {
-    color: "primary",
+    color: "secondary",
     variant: "filled",
   },
 });
@@ -75,4 +85,6 @@ type TextboxVariants = VariantProps<typeof styles>;
 export type TextboxProps = Omit<InputHTMLAttributes<HTMLInputElement>, "size"> &
   RefinedMerge<TextboxVariants, ComponentBase> & {
     type?: TextboxType;
+    label?: string;
+    description?: string;
   };

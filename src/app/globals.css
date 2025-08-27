@@ -73,6 +73,7 @@
   --color-gradient-first: var(--clb-c-gradient-first);
   --color-gradient-second: var(--clb-c-gradient-second);
 
+  --color-base-15:  var(--clb-c-base-15);
   --color-base-25:  var(--clb-c-base-25);
   --color-base-50: var(--clb-c-base-50);
   --color-base-75: var(--clb-c-base-75);
@@ -80,8 +81,6 @@
   --color-base-200:var(--clb-c-base-200);
   --color-base-300:var(--clb-c-base-300);
   --color-base-content: var(--clb-c-base-content);
-
-
 }
 
 
@@ -93,12 +92,14 @@
   :lang(en) {
     font-family: var(--font-figtree);
   }
-
-  h1 {
-    font-size: var(--text-2xl);
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
   }
-  h6 {
-    font-size: var(--text-xs);
+
+  input[type="number"] {
+    -moz-appearance: textfield;
   }
 }
 
@@ -110,6 +111,7 @@
 @layer utilities {
   .container {
     margin-inline:  auto ;
+    padding-inline: 16px;
   }
 
   .bg-hero-pattern {

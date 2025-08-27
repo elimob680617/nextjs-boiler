@@ -14,6 +14,6 @@ export type TextInputProps<TFormValues extends FieldValues> = Omit<
 > & {
   register: UseFormRegister<TFormValues>;
   name: Path<TFormValues>;
-  rules?: RegisterOptions | null;
+  rules?: RegisterOptions;
   errors: Partial<DeepMap<TFormValues, FieldError>>;
 };

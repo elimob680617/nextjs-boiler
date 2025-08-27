@@ -18,13 +18,16 @@ const SignInForm = () => {
   };
 
   return (
-    <div className="">
-      <h5 className="text-md font-semibold  text-primary">ورود | ثبت نام</h5>
+    <div className="w-full">
+      <h5 className="text-lg font-semibold  text-white">ورود | ثبت نام</h5>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="flex flex-col gap-6 mt-6"
+        className="flex flex-col gap-2 mt-6"
       >
         <TextInput<SignInType>
+          type="number"
+          label="شماره موبایل"
+          description="مثال: ** ** *** 0912"
           variant="filled"
           register={register}
           name="mobile"
@@ -41,8 +44,9 @@ const SignInForm = () => {
           }}
           errors={errors}
         />
+
         <Button type="submit" variant="filled">
-          تایید و دریافت کد
+          دریافت کد تایید
         </Button>
       </form>
     </div>

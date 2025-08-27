@@ -2,7 +2,7 @@
 import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { NavigationMenuItem } from "@/app/_components/types/navigation-menu-items.type";
+import { NavigationMenuItem } from "@/types/navigation-menu-items.type";
 
 const menuItems: NavigationMenuItem[] = [
   {

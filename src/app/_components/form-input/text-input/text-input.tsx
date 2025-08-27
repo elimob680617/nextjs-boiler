@@ -7,8 +7,6 @@ export const TextInput = <TFormValues extends FieldValues>({
   name,
   rules,
   errors,
-  variant,
-  type,
   ...rest
 }: TextInputProps<TFormValues>) => {
   const error = get(errors, name);
@@ -17,13 +15,11 @@ export const TextInput = <TFormValues extends FieldValues>({
   return (
     <>
       <Textbox
-        {...(register(name, rules) && register)}
+        {...register(name, rules)}
+        {...(hasError ? { hasError: true } : { hasError: false })}
         {...rest}
-        variant={variant}
-        type={type}
-        hasError={hasError}
       />
-      {hasError && <p className="mt-1 text-sm text-error">{error.message}</p>}
+      {hasError && <p className="text-sm text-error">{error.message}</p>}
     </>
   );
 };

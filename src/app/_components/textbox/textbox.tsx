@@ -11,6 +11,8 @@ export const Textbox: React.FC<TextboxProps> = forwardRef<
     {
       size,
       type,
+      label,
+      description,
       className,
       variant,
       color,
@@ -21,7 +23,7 @@ export const Textbox: React.FC<TextboxProps> = forwardRef<
     },
     ref,
   ) => {
-    const { base, input } = styles({
+    const { base, input, wrapper, labelStyle, descriptionStyle } = styles({
       size,
       className,
       variant,
@@ -31,9 +33,17 @@ export const Textbox: React.FC<TextboxProps> = forwardRef<
       onDarkBg,
     });
     return (
-      <div className={base()}>
-        <input ref={ref} type={type} className={input()} {...rest} />
+      <div className={wrapper({ className })}>
+        {label && <label className={labelStyle()}>{label}</label>}
+        <div className={base()}>
+          <input ref={ref} type={type} className={input()} {...rest} />
+        </div>
+        {description && <p className={descriptionStyle()}>{description}</p>}
       </div>
     );
   },
 );
+
+Textbox.displayName = "Textbox";
+
+export default Textbox;
