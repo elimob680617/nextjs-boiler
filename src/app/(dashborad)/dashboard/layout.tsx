@@ -14,7 +14,9 @@ const DashboardLayout = ({ children }: { children: ReactNode }) => {
               <div className="flex flex-col">
                 <div className="flex flex-row gap-4 py-2 items-center">
                   <div className="flex flex-col gap-1">
-                    <span className="text-white text-lg">الهام مبینی</span>
+                    <span className="text-white text-lg text-base">
+                      الهام مبینی
+                    </span>
                     <span className="text-secondary-300 text-base">
                       شماره موبایل : 09126598556
                     </span>

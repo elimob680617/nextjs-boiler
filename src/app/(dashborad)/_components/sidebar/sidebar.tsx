@@ -4,20 +4,20 @@ import { NavigationMenuItem } from "@/types/navigation-menu-items.type";
 
 const sidebarItems: NavigationMenuItem[] = [
   {
-    title: "دوره های من",
-    href: "/",
+    title: "شارژ و هزینه های جاری",
+    href: "/dashboard/charges",
   },
   {
-    title: "فاکتور ها",
+    title: "پرداخت‌ها و صورتحساب‌های من",
     href: "/1",
   },
   {
-    title: "پیام های من",
+    title: "اطلاعیه‌ها",
     href: "/2",
   },
   {
     title: "پروفایل کاربری",
-    href: "/3",
+    href: "/dashboard/profile",
   },
 ];
 
@@ -27,7 +27,7 @@ const Sidebar = () => {
       {sidebarItems.map((item) => (
         <li key={item.href}>
           <Link
-            className="flex items-center text-secondary-content gap-3 w-full"
+            className="flex items-center text-base gap-3 w-full"
             href={item.href}
           >
             {item.title}

@@ -1,4 +1,4 @@
-import VerifyForm from "@/app/(auth)/verify/components/verify-form";
+import VerifyForm from "@/app/(auth)/verify/_components/verify-form";
 
 export default function Verify() {
   return (
