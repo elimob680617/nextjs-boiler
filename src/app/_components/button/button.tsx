@@ -1,66 +1,58 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
-import { Loading } from "@/app/_components/loading";
-import { ButtonProps, styles } from "@/app/_components/button/button.types";
+import {
+  ButtonProps,
+  ButtonShape,
+} from "@/app/_components/button/button.types";
+import classNames from "classnames";
+import { Size } from "@/app/_components/types/size.type";
+
+const sizeClasses: Record<Size, string> = {
+  xs: "btn-xs",
+  sm: "btn-sm",
+  md: "",
+  lg: "btn-lg",
+};
+
+const shapeClasses: Record<ButtonShape, string> = {
+  wide: "btn-wide",
+  full: "btn-block",
+  square: "btn-square",
+  default: "",
+};
 
 export const Button: React.FC<ButtonProps> = ({
-  color,
+  color = "default",
   variant,
+  size = "md",
+  isDisabled = false,
+  isOutline = false,
+  isLoading = false,
+  loadingType = "spinner",
+  loadingText = "در حال ارسال درخواست ...",
+  type = "button",
+  isLink = false,
+  animatedIcon = false,
+  shape = "default",
   children,
   className,
-  icon,
-  iconDir = "start",
-  loading,
-  size,
-  href,
-  disabled,
-  iconSize = 16,
-  isDownload = false,
-  linkClassName,
   ...rest
 }) => {
-  const { base } = styles({
-    color,
-    variant,
-    loading,
-    size,
-    disabled,
-  });
-
-  const renderedContent = (
-    <button className={base({ className })} {...rest}>
-      {icon &&
-        !loading &&
-        iconDir === "start" &&
-        React.cloneElement(icon as React.ReactSVGElement, {
-          width: iconSize,
-          height: iconSize,
-          style: { marginTop: "-4px" },
-        })}
-      {loading && <Loading size="xs" color="default" />}
-      {loading ? "در حال ارسال درخواست ..." : children}
-      {icon &&
-        iconDir === "end" &&
-        React.cloneElement(icon as React.ReactSVGElement, {
-          width: iconSize,
-          height: iconSize,
-          style: { marginTop: "-4px" },
-        })}
+  const classes = classNames(
+    "btn",
+    className,
+    { [`btn-${variant}`]: variant },
+    { [`${sizeClasses[size]}`]: size },
+    { "btn-outline": isOutline },
+    { "btn-link": isLink },
+    { [`${shapeClasses[shape]}`]: shape },
+    { "animated-icon": animatedIcon },
+    { "pointer-events-none opacity-80": isLoading },
+  );
+  return (
+    <button type={type} disabled={isDisabled} className={classes} {...rest}>
+      {isLoading ? loadingText : children}
     </button>
   );
-
-  if (href) {
-    return (
-      <Link
-        className={linkClassName}
-        href={href}
-        target={isDownload ? "_blank" : "_self"}
-      >
-        {renderedContent}
-      </Link>
-    );
-  }
-  return renderedContent;
 };

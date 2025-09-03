@@ -50,7 +50,6 @@ async function DashboardPage() {
                   <td className="p-4  flex justify-center items-center">
                     <Button
                       size="xs"
-                      variant="filled"
                       color="success"
                       className=" text-xs text-success"
                     >

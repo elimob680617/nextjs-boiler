@@ -10,9 +10,9 @@ const Header: React.FC = () => {
         <span>Logo</span>
         <TopNavigation />
         <div className="flex justify-end  w-full items-center">
-          <Button variant="outlined" color="primary" href="/sign-in">
-            ورود | ثبت نام
-          </Button>
+          {/*<Button variant="outlined" color="primary">*/}
+          {/*  ورود | ثبت نام*/}
+          {/*</Button>*/}
         </div>
       </div>
     </nav>

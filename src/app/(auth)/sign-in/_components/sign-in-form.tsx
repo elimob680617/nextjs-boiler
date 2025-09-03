@@ -45,7 +45,7 @@ const SignInForm = () => {
           errors={errors}
         />
 
-        <Button type="submit" variant="filled">
+        <Button type="submit" variant="outline" color="primary">
           دریافت کد تایید
         </Button>
       </form>

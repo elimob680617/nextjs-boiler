@@ -1,1 +1,1 @@
-export type Variant = "filled" | "outlined";
+export type Variant = "filled" | "outline";

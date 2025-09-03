@@ -1,5 +1,5 @@
-import type { Metadata } from "next";
 import "./globals.css";
+import type { Metadata } from "next";
 import { Figtree } from "next/font/google";
 import localFont from "next/font/local";
 
@@ -63,7 +63,7 @@ export default function RootLayout({
 }>) {
   return (
     <html dir="rtl" className={`dark ${figtree.variable} ${yekan.variable}`}>
-      <body className="min-h-screen grid grid-rows-[80px_1fr_auto] dark:bg-base-300 dark:text-base-content">
+      <body className="min-h-screen grid grid-rows-[80px_1fr_auto] dark:bg-base-100 dark:text-base-content">
         {children}
       </body>
     </html>
