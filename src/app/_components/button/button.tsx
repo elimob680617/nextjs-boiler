@@ -7,11 +7,12 @@ import {
 } from "@/app/_components/button/button.types";
 import classNames from "classnames";
 import { Size } from "@/app/_components/types/size.type";
+import { Loading } from "@/app/_components/loading";
 
 const sizeClasses: Record<Size, string> = {
   xs: "btn-xs",
   sm: "btn-sm",
-  md: "",
+  md: "btn-md",
   lg: "btn-lg",
 };
 
@@ -23,7 +24,7 @@ const shapeClasses: Record<ButtonShape, string> = {
 };
 
 export const Button: React.FC<ButtonProps> = ({
-  color = "default",
+  color,
   variant,
   size = "md",
   isDisabled = false,
@@ -42,6 +43,7 @@ export const Button: React.FC<ButtonProps> = ({
   const classes = classNames(
     "btn",
     className,
+    { [`btn-${color}`]: color },
     { [`btn-${variant}`]: variant },
     { [`${sizeClasses[size]}`]: size },
     { "btn-outline": isOutline },
@@ -52,6 +54,7 @@ export const Button: React.FC<ButtonProps> = ({
   );
   return (
     <button type={type} disabled={isDisabled} className={classes} {...rest}>
+      {isLoading && <Loading type={loadingType} size="xs" />}
       {isLoading ? loadingText : children}
     </button>
   );

@@ -48,11 +48,7 @@ async function DashboardPage() {
                   <td className="p-4">{course.courseCategoryId}</td>
                   <td className="text-center p-4"></td>
                   <td className="p-4  flex justify-center items-center">
-                    <Button
-                      size="xs"
-                      color="success"
-                      className=" text-xs text-success"
-                    >
+                    <Button size="xs" color="success">
                       پرداخت
                     </Button>
                   </td>

@@ -1,0 +1,47 @@
+.loading {
+    @apply pointer-events-none aspect-square inline-block rounded-full ;
+
+    &-spinner {
+        @apply animate-spin border-2 border-t-transparent;
+    }
+
+    &-ring {
+        @apply animate-ping border-2;
+    }
+
+    &-xs {
+        @apply w-4;
+    }
+
+    &-sm {
+        @apply w-5;
+    }
+
+    &-md {
+        @apply w-6 h-6;
+    }
+
+    &-lg {
+        @apply w-10;
+    }
+
+    &-primary {
+        @apply dark:text-primary;
+    }
+    &-secondary {
+        @apply dark:text-secondary;
+    }
+
+    &-info {
+        @apply dark:text-info;
+    }
+    &-success {
+        @apply dark:text-success;
+    }
+    &-warning {
+        @apply dark:text-warning;
+    }
+    &-error {
+        @apply dark:text-error;
+    }
+}

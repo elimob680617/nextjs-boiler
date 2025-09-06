@@ -30,18 +30,19 @@
   --clb-c-base-content: oklch(0.75 0.02 264.44 / 1);
 
 
-  --clb-c-primary-focus: color-mix(in oklch, var(--clb-c-primary), black 7%);
+  --clb-c-primary-focus: color-mix(in oklch, var(--clb-c-primary), black 20%);
   --clb-c-primary-content: color-mix(in oklch, var(--clb-c-primary), white 80%);
-  --clb-c-secondary-focus: color-mix(in oklch, var(--clb-c-secondary), black 7%);
+  --clb-c-secondary-focus: color-mix(in oklch, var(--clb-c-secondary), black 20%);
   --clb-c-secondary-content: color-mix(in oklch, var(--clb-c-secondary), white 80%);
-  --clb-c-accent-focus: color-mix(in oklch, var(--clb-c-accent), black 7%);
-  --clb-c-accent-content: color-mix(in oklch, var(--clb-c-accent), white 80%);
-  --clb-c-neutral-focus: color-mix(in oklch, var(--clb-c-neutral), black 3%);
-  --clb-c-neutral-content: color-mix(in oklch, var(--clb-c-neutral), white 80%);
-  --clb-c-info-content: color-mix(in oklch, var(--clb-c-info), black 80%);
-  --clb-c-success-content: color-mix(in oklch, var(--clb-c-success), black 80%);
-  --clb-c-warning-content: color-mix(in oklch, var(--clb-c-warning), black 80%);
-  --clb-c-error-content: color-mix(in oklch, var(--clb-c-error), black 80%);
+
+  --clb-c-info-content: color-mix(in oklch, var(--clb-c-info), white 80%);
+  --clb-c-info-focus: color-mix(in oklch, var(--clb-c-info), black 20%);
+  --clb-c-success-content: color-mix(in oklch, var(--clb-c-success), white 80%);
+  --clb-c-success-focus: color-mix(in oklch, var(--clb-c-success), black 20%);
+  --clb-c-warning-content: color-mix(in oklch, var(--clb-c-warning), white 80%);
+  --clb-c-warning-focus: color-mix(in oklch, var(--clb-c-warning), black 20%);
+  --clb-c-error-content: color-mix(in oklch, var(--clb-c-error), white 80%);
+  --clb-c-error-focus: color-mix(in oklch, var(--clb-c-error), black 20%);
 }
 
 /* Apply Colors to Tailwind */
@@ -56,21 +57,26 @@
   --color-secondary-content: var(--clb-c-secondary-content);
   --color-secondary-focus: var(--clb-c-secondary-focus);
   --color-accent: var(--clb-c-accent);
-  --color-accent-content: var(--clb-c-accent-content);
-  --color-accent-focus: var(--clb-c-accent-focus);
+
   --color-neutral: var(--clb-c-neutral);
-  --color-neutral-content: var(--clb-c-neutral-content);
-  --color-neutral-focus: var(--clb-c-neutral-focus);
+
+
   --color-info: var(--clb-c-info);
   --color-info-content: var(--clb-c-info-content);
+  --color-info-focus: var(--clb-c-info-focus);
   --color-success: var(--clb-c-success);
   --color-success-content: var(--clb-c-success-content);
+  --color-success-focus: var(--clb-c-success-focus);
   --color-warning: var(--clb-c-warning);
   --color-warning-content: var(--clb-c-warning-content);
+  --color-warning-focus: var(--clb-c-warning-focus);
   --color-error: var(--clb-c-error);
   --color-error-content: var(--clb-c-error-content);
+  --color-error-focus: var(--clb-c-error-focus);
+
   --color-gradient-first: var(--clb-c-gradient-first);
   --color-gradient-second: var(--clb-c-gradient-second);
+
 
   --color-base-25: var(--clb-c-base-25);
   --color-base-50: var(--clb-c-base-50);
