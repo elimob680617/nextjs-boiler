@@ -23,7 +23,7 @@ const sidebarItems: NavigationMenuItem[] = [
 
 const Sidebar = () => {
   return (
-    <ul className="flex flex-col self-stretch *:border-b *:border-base-75 *:border-dashed mt-8 *:px-4 *:hover:opacity-80 *:transition-all *:py-4">
+    <ul className="flex flex-col self-stretch *:border-b *:border-base-25 *:border-dashed mt-8 *:px-4 *:hover:opacity-80 *:transition-all *:py-4">
       {sidebarItems.map((item) => (
         <li key={item.href}>
           <Link

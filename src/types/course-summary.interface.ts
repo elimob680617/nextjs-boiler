@@ -1,6 +1,6 @@
 import { CourseLevel } from "@/enums/course-level.enum";
 
-export interface CourseSummary {
+export interface ChargeSummary {
   id: number;
   title: string;
   courseCategoryId: number;
