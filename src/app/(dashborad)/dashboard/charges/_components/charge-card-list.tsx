@@ -8,7 +8,7 @@ type ChargeListProps = {
 
 export const ChargeCardList: React.FC<ChargeListProps> = ({ charges }) => {
   return (
-    <div className="flex flex-wrap justify-center xl:justify-start gap-6 mt-3">
+    <div className="flex flex-wrap justify-center xl:justify-start gap-2 mt-3">
       {charges.map((charge) => (
         <ChargeCard key={`charge-${charge.id}`} {...charge} />
       ))}

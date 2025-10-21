@@ -3,6 +3,7 @@ import { ChargeSummary } from "@/types/course-summary.interface";
 import Image from "next/image";
 import Link from "next/link";
 import { Badge } from "@/app/_components/badge";
+import { IconArrowLeftFill, IconClock } from "@/app/_components/icons/icons";
 
 export type ChargeCardProps = ChargeSummary & {};
 
@@ -31,15 +32,22 @@ const ChargeCard: React.FC<ChargeCardProps> = ({
         <Badge color="secondary"> {level}</Badge>
       </div>
       <div className="card-body">
-        <Link href={`/course/${slug}`}>{title}</Link>
+        <Link href={`/dashboard/charges/${slug}`}>{title}</Link>
         <p>{subTitle}</p>
         <div>
-          <Badge color="warning">{duration}</Badge>
+          <Badge color="warning">
+            <IconClock width={16} height={16} />
+            {duration}
+          </Badge>
           {basePrice}
         </div>
       </div>
-      <Link href={`/course/${slug}`} className="card-footer justify-center">
+      <Link
+        href={`/dashboard/charges/${slug}`}
+        className="card-footer justify-center"
+      >
         مشاهده جزئیات هزینه
+        <IconArrowLeftFill fill="currentColor" />
       </Link>
     </div>
   );
