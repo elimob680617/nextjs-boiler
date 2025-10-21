@@ -1,6 +1,6 @@
 import React, { Suspense } from "react";
 import { ChargeSummary } from "@/types/course-summary.interface";
-import { ChargeCardList } from "@/app/(dashborad)/dashboard/charges/_components/charge-card-list";
+import { ChargeCardList } from "@/app/(dashborad)/dashboard/(charges)/_components/charge-card-list";
 import { API_URL } from "@/config/global";
 import { CardPlaceholder } from "@/app/_components/placeholders";
 

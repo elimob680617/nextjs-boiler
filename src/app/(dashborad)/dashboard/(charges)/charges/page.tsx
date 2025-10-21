@@ -1,5 +1,5 @@
 import React from "react";
-import { ChargeCardList } from "@/app/(dashborad)/dashboard/charges/_components/charge-card-list";
+import { ChargeCardList } from "@/app/(dashborad)/dashboard/(charges)/_components/charge-card-list";
 
 const ChargePage = () => {
   return (

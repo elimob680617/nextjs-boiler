@@ -5,4 +5,5 @@ export type Color =
   | "success"
   | "secondary"
   | "info"
-  | "error";
+  | "error"
+  | number;

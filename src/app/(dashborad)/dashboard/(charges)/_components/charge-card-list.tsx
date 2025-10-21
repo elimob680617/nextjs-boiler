@@ -1,5 +1,5 @@
 import { ChargeSummary } from "@/types/course-summary.interface";
-import ChargeCard from "@/app/(dashborad)/dashboard/charges/_components/charge-card";
+import ChargeCard from "@/app/(dashborad)/dashboard/(charges)/_components/charge-card";
 import React from "react";
 
 type ChargeListProps = {
